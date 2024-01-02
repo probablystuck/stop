@@ -1,16 +1,14 @@
 # get processes and their info
 # match yarn.js or ocaml, pgrep is specifically designed to search by process name and return pid
+# when you ctrl + c a yarn start, start.js goes with it. we need to include that here
 pids=($(ps aux | pgrep -f 'yarn.js|start.js|ocaml'))
-
-# echo $pids
 
 length=${#pids[@]}
 
-# Print the length
-echo "Length of list: $length"
-
 for ((i = 0; i < length; i++))
 do
+  # outright killing a process is ungraceful, could lead to weirdness and stuff left behind not cleaned up
+  # -15 makes it softer
     kill -15 ${pids[i]}
 done
 
