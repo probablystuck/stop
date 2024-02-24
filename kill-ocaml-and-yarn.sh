@@ -1,7 +1,8 @@
 # get processes and their info
 # match yarn.js or ocaml, pgrep is specifically designed to search by process name and return pid
+# npm run dev gets svelte
 # when you ctrl + c a yarn start, start.js goes with it. we need to include that here
-pids=($(ps aux | pgrep -f 'yarn.js|start.js|ocaml'))
+pids=($(ps aux | pgrep -f 'yarn.js|start.js|ocaml|npm run dev'))
 
 length=${#pids[@]}
 
