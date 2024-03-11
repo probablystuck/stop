@@ -26,3 +26,8 @@ near end state:
   3. output new list
   4. "would you like to remove more? input yes to remove more. hit Enter to quit"
      1. loop from 1 again
+
+additional enhancements:
+
+- configure cron job on first use, set a default value. (right now cron will have to be set up separate from this)
+- improve above flow to account for the ability to change the amount of time to check for process in cron (set up a new job based on user inputted time series, in addition to the default schedule)
