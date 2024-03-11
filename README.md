@@ -3,13 +3,16 @@ it bugs me to leave my laptop alone and then see these processes running for day
 near end state:
 
 - prompt user for new ps name
-  1. first ask user to ensure that the process is started
-     1. "is the process you wish to add to the kill list running? if not, start it. if it's a terminal process, you can start it in a new window. input yes to continue, input remove-kill to clean up the kill list"
-  2. "would you like to match the output of running processes against a pattern? enter it below or hit enter to continue"
-     1. if enter, list all processes "ps -aux"
-     2. else ps aux | pgrep -f '${user_inputed_pattern}'
+
+  ~~1. first ask user to ensure that the process is started~~
+
+  1. ~~"is the process you wish to add to the kill list running? if not, start it. if it's a terminal process, you can start it in a new window. input yes to continue, input remove-kill to clean up the kill list"~~
+  2. ~~"would you like to match the output of running processes against a pattern? enter it below or hit enter to continue"~~
+     1. ~~if enter, list all processes "ps -aux"~~
+     2. ~~else ps aux | pgrep -f '${user_inputed_pattern}'~~
      3. at the end of output, bolded?
-     4. "this is the output of all current running processes, get the name of the process you wish to add from the last column of output"
+     4. ~~"this is the output of all current running processes, get the name of the process you wish to add from the last column of output"~~
+
 - "input r to redo search,
   1. r loops again starting at 2
 - else input process name to add to list"
@@ -31,3 +34,12 @@ additional enhancements:
 
 - configure cron job on first use, set a default value. (right now cron will have to be set up separate from this)
 - improve above flow to account for the ability to change the amount of time to check for process in cron (set up a new job based on user inputted time series, in addition to the default schedule)
+
+## resources
+
+- chatgpt
+- https://ryanstutorials.net/bash-scripting-tutorial
+- https://www.gnu.org/software/bash/manual/bash.html
+- https://www.baeldung.com/linux/unary-operator-expected-error
+- https://man7.org/linux/man-pages/man2/read.2.html
+- https://ioflood.com/blog/bash-print/
