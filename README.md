@@ -2,7 +2,7 @@ it bugs me to leave my laptop alone and then see these processes running for day
 
 near end state:
 
-- prompt user for new ps name
+- ~~prompt user for new ps name~~
 
   ~~1. first ask user to ensure that the process is started~~
 
@@ -13,11 +13,11 @@ near end state:
      3. at the end of output, bolded?
      4. ~~"this is the output of all current running processes, get the name of the process you wish to add from the last column of output"~~
 
-- "input r to redo search,
-  1. r loops again starting at 2
-- else input process name to add to list"
-  1.  adding to the list means writing the new value to a file that is either created or already existing, | separated
-  2.  once added, the list is outputted to the console
+- ~~"input r to redo search,~~
+  1. ~~r loops again starting at 2~~
+- ~~else input process name to add to list"~~
+  1.  ~~adding to the list means writing the new value to a file that is either created or already existing, | separated~~
+  2.  ~~once added, the list is outputted to the console~~
   3.  pids variable from the first line in script fills the list of process to pgrep by from the file above
 - "would you like to remove items from the kill list? input yes to remove. hit Enter to quit"
 

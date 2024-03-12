@@ -3,16 +3,36 @@ read -p "is the process you wish to add to the kill list running? if not, start 
 
 if [ $user_direction = "yes" ]
 then
-  read -p "would you like to match the output of running processes against a pattern? enter it below or hit enter to continue
+  process_name="r"
+
+  until [ "$process_name" != "r" ]
+  do
+    read -p "would you like to match the output of running processes against a pattern? enter it below or hit enter to continue
 " pattern
 
-  if [ -z "$pattern" ]; then
-    echo "$(ps aux)\n"
+    if [ -z "$pattern" ]; then
+      echo "$(ps aux)\n"
+    else
+      echo "$(ps aux | pgrep -fl ${pattern})\n"
+    fi
+
+    echo "this is the output of all current running processes, copy the name of the process you wish to add from the last column of output
+    "
+
+    read -p "enter r to restart search, otherwise input the name of the process
+" process_name
+  done
+
+  if [ -e "hit_list.txt" ]
+  then
+    echo "|$process_name\c" >> hit_list.txt
   else
-    echo "$(ps aux | pgrep -fl ${pattern})\n"
+    echo "$process_name\c" >> hit_list.txt
   fi
 
-  echo "this is the output of all current running processes, get the name of the process you wish to add from the last column of output\n"
+  list=$(cat "hit_list.txt")
+
+  echo $list
 fi
 
 # get processes and their info
