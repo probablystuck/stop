@@ -18,7 +18,7 @@ near end state:
 - ~~else input process name to add to list"~~
   1.  ~~adding to the list means writing the new value to a file that is either created or already existing, | separated~~
   2.  ~~once added, the list is outputted to the console~~
-  3.  pids variable from the first line in script fills the list of process to pgrep by from the file above
+  3.  ~~pids variable from the first line in script fills the list of process to pgrep by from the file above~~
 - "would you like to remove items from the kill list? input yes to remove. hit Enter to quit"
 
 - remove-kill
